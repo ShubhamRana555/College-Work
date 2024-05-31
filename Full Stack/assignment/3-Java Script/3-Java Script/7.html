@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Splitter</title>
+</head>
+<body>
+    <h1>Phone Number Splitter</h1>
+    <label for="phone">Enter your phone number ((555)555-555):</label>
+    <input type="text" id="phone" name="name">
+
+    <button onclick="splitPhoneNumber()">Split Phone Number</button>
+    <p>Area Code: <span id="area-code"></span></p> 
+    <p>Phone Number: <span id="phone-number"></span></p>
+
+    <script>
+        function splitPhoneNumber(){
+            var phone=document.getElementById("phone").value;
+            var areaCode=phone.split(')')[0].slice(1);
+            var phoneNumber= areaCode+phone.split(')')[1].split('-')[0].slice(2)+phone.split('-')[1];
+
+            document.getElementById("area-code").innerHTML=areaCode;
+            document.getElementById('phone-number').innerHTML=phoneNumber;
+
+        }
+    </script>
+</body>
+</html>

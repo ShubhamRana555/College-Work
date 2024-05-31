@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resizable Background Image</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('compiling.png'); /* Path to your background image */
+    background-size: cover; /* Initially set background size to cover */
+    font-family: Arial, sans-serif; /* Optional font family */
+    color: red; /* Optional text color */
+  }
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  input[type="range"] {
+    width: 100%;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <h1>Resizable Background Image</h1>
+    <p>Use the slider below to resize the background image:</p>
+    <!-- Range input for resizing background -->
+    <input type="range" min="10" max="200" value="100" id="bgSizeRange">
+  </div>
+
+  <script>
+    // JavaScript to handle resizing of background image
+    document.getElementById('bgSizeRange').addEventListener('input', function() {
+      // Get the value of the range input
+      var size = this.value + '%';
+      
+      // Set the background size property to the selected value
+      document.body.style.backgroundSize = size;
+    });
+  </script>
+</body>
+</html>

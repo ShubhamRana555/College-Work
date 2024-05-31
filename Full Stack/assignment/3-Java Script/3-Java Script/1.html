@@ -1,0 +1,35 @@
+<!-- 
+. Design a web page to validate credit card numbers per the specifications below. The 
+following tables outline the major credit cards you want to validate and allow prefixes 
+and lengths.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Validator</title>
+    <script>
+        function validateCard() {
+            var cardNumber = document.getElementById('cardNumber').value;
+            var cardType;
+            if ((/^5[1-5]/.test(cardNumber)) && (cardNumber.length == 16)) {
+                cardType = 'Master Card';
+            } else if ((/^4/.test(cardNumber)) && (cardNumber.length == 13 || cardNumber.length == 16)) {
+                cardType = 'Visa';
+            } else if ((/^3[47]/.test(cardNumber)) && (cardNumber.length == 15)) {
+                cardType = 'American Express';
+            } else {
+                alert('Invalid card number!');
+                return false;
+            }
+            alert('Valid ' + cardType + ' card number!');
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateCard()">
+        <label for="cardNumber">Enter your credit card number:</label><br>
+        <input type="text" id="cardNumber" name="cardNumber"><br>
+        <input type="submit" value="Validate">
+    </form>
+</body>
+</html>

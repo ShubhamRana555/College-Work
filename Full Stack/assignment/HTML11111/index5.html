@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web D</title>
+</head>
+
+<body>
+    <h1>Ayush Bisht</h1>
+    
+    <ul>
+        <li><a href="personal_info.html" >Personal Information</a></li>
+        <li><a href="family_info.html" >Family Information</a></li>
+        <li><a href="educational_info.html" >Educational Information</a></li>
+        <li><a href="experience.html" >Experience</a></li>
+        <li><a href="achievements.html" >Achievements</a></li>
+        <li><a href="contact.html">Contact Details</a></li>
+    </ul>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Map with Hot Spots</title>
+<style>
+    #info-box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<h1>Image Map with Hot Spots</h1>
+
+<!-- Image with Image Map -->
+<img src="compiling.png" alt="Map" usemap="#map">
+
+<!-- Image Map -->
+<map name="map">
+    <!-- Define Hot Spots -->
+    <area shape="circle" coords="100,100,50" href="#" alt="Hot Spot 1" data-info="Information about Hot Spot 1">
+    <area shape="circle" coords="250,150,50" href="#" alt="Hot Spot 2" data-info="Information about Hot Spot 2">
+    <area shape="circle" coords="400,200,50" href="#" alt="Hot Spot 3" data-info="Information about Hot Spot 3">
+</map>
+
+<!-- Information Box -->
+<div id="info-box"></div>
+
+<script>
+    // JavaScript to Show Information Box when Hot Spot Clicked
+    const infoBox = document.getElementById('info-box');
+    const areas = document.querySelectorAll('area');
+
+    areas.forEach(area => {
+        area.addEventListener('click', function(event) {
+            event.preventDefault();
+            const info = this.getAttribute('data-info');
+            infoBox.textContent = info;
+            infoBox.style.display = 'block';
+        });
+    });
+
+    // Close Information Box when Clicked Outside
+    document.addEventListener('click', function(event) {
+        if (!infoBox.contains(event.target)) {
+            infoBox.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!-- Design a web page to validate the following according to the standard conditions.
+a. Name 
+b. E-Mail-id and 
+c. Password. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function validateForm(){
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+
+            // validate name
+            if(!/^[A-Za-z\s]+$/.test(name)){
+                alert("Please enter a valid name");
+                return false;
+            }
+
+            //validate email
+            // /[A-Za-z0-9]+@[A-Za-z]+\.[a-zA-Z]+/--> alternative
+            if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+                alert('Invalid email! Please enter a valid email address.');
+                return false;
+            }
+
+            // Validate password (must be at least 8 characters, contain at least one number and one special character)
+            if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/.test(password)) {
+                alert('Invalid password! Password should be at least 8 characters, contain at least one number and one special character.');
+                return false;
+            }
+
+            alert('Form submitted successfully!');
+            return true;
+
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- Create a web page to show all hyperlinks with following specification:
+• Default color is pink.
+• Active color is blue.
+• Visited color is Green.
+• Hyperlink should be without underline. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Hyperlinks</title>
+<style>
+    /* Default Style */
+    a {
+        color: pink; /* Default color */
+        text-decoration: none; /* No underline */
+    }
+
+    /* Hover Style */
+    a:active {
+        color: blue; /* Active color on hover */
+    }
+
+    /* Visited Style */
+    a:visited {
+        color: green; /* Visited color */
+    }
+</style>
+</head>
+<body>
+
+<h1>Styled Hyperlinks</h1>
+
+<!-- Hyperlinks -->
+<ul>
+    <li><a href="https://www.microsoft.com">Example</a></li>
+    <li><a href="https://www.googlee.com">Google</a></li>
+    <li><a href="https://www.yahoo.com">Yahoo</a></li>
+</ul>
+
+</body>
+</html>
+

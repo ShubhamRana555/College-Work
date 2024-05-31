@@ -1,0 +1,20 @@
+<!-- . Design a web page that is self-modifying itself after every minute.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color Changer</title>
+    <script>
+        function changeBackgroundColor() {
+            var colors = ["red", "green", "blue", "black", "purple", "#FF00FF"];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // Call changeBackgroundColor() every minute (60000 milliseconds)
+        setInterval(changeBackgroundColor, 600);
+    </script>
+</head>
+<body>
+    <h1>This page will change its background color every minute.</h1>
+</body>
+</html>

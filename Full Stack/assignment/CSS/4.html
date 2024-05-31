@@ -1,0 +1,43 @@
+<!-- Create a web page to show newspaper layout effects on contents given in web page 
+(i.e. in multiple columns) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newspaper Layout</title>
+<style>
+  .newspaper {
+    column-count: 3; /* Number of columns     */
+    column-gap: 20px; /* Gap between columns */
+    padding: 20px; /* Padding around content */
+  }
+  
+  .article {
+    margin-bottom: 20px; /* Margin between articles */
+  }
+</style>
+</head>
+<body>
+  <div class="newspaper">
+    <div class="article">
+      <h2>Article 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ante magna. Curabitur luctus vel nisl eget facilisis. Donec id semper justo, vel hendrerit purus. Nulla facilisi. Nam at urna eu ligula luctus hendrerit vitae ut ipsum.</p>
+    </div>
+    <div class="article">
+      <h2>Article 2</h2>
+      <p>Integer sagittis, nisl ut tincidunt tristique, nisi mi mattis tellus, ac convallis lectus odio eget elit. Vivamus sed turpis sed leo laoreet dictum. Ut tincidunt tristique enim nec condimentum. </p>
+    </div>
+    <div class="article">
+      <h2>Article 3</h2>
+      <p>Phasellus fermentum nisi eu ipsum accumsan suscipit. Vestibulum dignissim odio eu nunc dignissim, ut lobortis nunc lobortis. Nulla euismod magna quis lorem accumsan, vel auctor sem feugiat.</p>
+    </div>
+    <div class="article">
+      <h2>Article 4</h2>
+      <p>Etiam lacinia congue turpis, nec dapibus nisl ullamcorper a. Nulla facilisi. Sed at enim ac velit tempus pharetra ut ut nunc. Aliquam fringilla vitae odio vitae euismod.</p>
+    </div>
+    <!-- Add more articles as needed -->
+  </div>
+</body>
+</html>

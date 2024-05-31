@@ -1,0 +1,38 @@
+<!-- Create Box Shadow and text Shadow using CSS3. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Shadow and Text Shadow Example</title>
+<style>
+    /* Box Shadow */
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur spread color */
+        margin-bottom: 20px;
+    }
+
+    /* Text Shadow */
+    .text {
+        font-size: 24px;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur color */
+    }
+</style>
+</head>
+<body>
+
+<h1>Box Shadow and Text Shadow Example</h1>
+
+<!-- Box Shadow Example -->
+<div class="box"></div>
+
+<!-- Text Shadow Example -->
+<p class="text">This is a text with shadow.</p>
+
+</body>
+</html>

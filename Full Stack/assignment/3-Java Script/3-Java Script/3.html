@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country capital</title>
+    <style>
+        .correct{
+            color:green;
+        }
+        .incorrect{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <select  id="countries">
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="China">China</option>
+    </select>
+    <select id="capitals">
+        <option value="New Delhi">New Delhi</option>
+        <option value="Washington, D.C.">Washington, D.C.</option>
+        <option value="Islamabad">Islamabad</option>
+        <option value="Beijing">Beijing</option>
+    </select>
+    <button onclick="checkAnswer()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        var countryCapitals={
+            "India":"New Delhi",
+            "USA":"Washington, D.C.",
+            "Pakistan":"Islamabad",
+            "China":"Beijing"
+        }
+        function checkAnswer()
+        {
+            var country=document.getElementById("countries").value;
+            var capital=document.getElementById("capitals").value;
+            var result=document.getElementById("result");
+        
+            if(countryCapitals[country]==capital)
+            {
+                result.textContent="Correct Answer";
+                result.className="correct";
+            }
+            else
+            {
+                result.textContent="Incorrect answer. The capital of " + country + " is " + countryCapitals[country];
+                result.className="incorrect";
+            }
+        }
+    </script>
+    
+</body>
+</html>
